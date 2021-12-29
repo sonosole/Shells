@@ -51,7 +51,7 @@ if [ $firstTypeStr != '.' ]; then
 fi
 
 # [3] 遍历path下的文件，然后用新字符串替换老字符串
-find ${path} -name "*."${type} -print0 | xargs -0 -n 1 | while read src
+find ${path} -name "*"${type} -print0 | xargs -0 -n 1 | while read src
 do
 	echo $src | grep -e "$oldstr" > /dev/null 2>&1
 	if [ $? = 0 ];then
